@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --font-color: #FFF;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    font-size: 1.6rem;
+    font-family: "muli", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 8rem 0 0;
+
+}
+
+.panel {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+}
+
+.panel img {
+    width: 30rem;
+    height: 7.5rem;
+    object-fit: cover;
+    border-radius: 9999px;
+}
+
+.panel h2 {
+    font-size: 2rem;
+    color: var(--font-color);
+    position: absolute;
+    z-index: 1;
+
+    bottom: 1rem;
+    left: 3rem;
+}
+
+.panel.active img {
+    width: 30rem;
+    height: 30rem;
+    border-radius: 5rem;
+    transition: width 1s ease-in;
+
+}
+
+.panel.active h2 {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 700px) {
+
+    main {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .panel img {
+        width: 7.5rem;
+        height: 55rem;
+        object-fit: cover;
+        border-radius: 9999px;
+    }
+
+    .panel h2 {
+        display: none;
+        font-size: 2.4rem;
+        color: var(--font-color);
+        position: absolute;
+        z-index: 1;
+
+        bottom: 2rem;
+        left: 2rem;
+    }
+
+    .panel.active img {
+        width: clamp(30rem, 20rem + 15vw, 50rem);
+        height: 55rem;
+        border-radius: 5rem;
+    }
+
+    .panel.active h2 {
+        display: block;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .panel.active img {
+        width: clamp(30rem, 25rem + 35vw, 70rem);
+        height: 55rem;
+        border-radius: 5rem;
+
+        animation: rightToLeft 700ms 450ms backwards;
+    }
+}
+
+@keyframes rightToLeft {
+    0% {
+        scale: (1);
+    }
+
+    100% {
+        scale: (2.2);
+    }
+}
