@@ -4,8 +4,13 @@
     box-sizing: border-box;
 }
 
+:root {
+    font-size: 62.5%;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
